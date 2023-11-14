@@ -3,8 +3,13 @@
 	"version": "1.0.0",
 	"description": "Get a scoped ID for whatever file you're in. Zero client-side JS.",
 	"type": "module",
-	"main": "index.js",
-	"types": "types.d.ts",
+	"exports": {
+		".": "./index.js"
+	},
+	"files": [
+		"types.d.ts",
+		"index.js"
+	],
 	"scripts": {
 		"lint": "eslint '**/*.js'",
 		"lint:fix": "eslint --fix '**/*.js'",
