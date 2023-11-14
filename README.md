@@ -39,8 +39,6 @@ Then, set up type inferencing for the `simple:scope` module with an `env.d.ts` f
 /// <reference types="vite-plugin-simple-scope/types" />
 ```
 
-```
-
 Finally, apply as a vite plugin in your framework of choice:
 
 ```js
