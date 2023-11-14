@@ -11,7 +11,7 @@ function Form() {
       <label htmlFor={scope('email')}>Email</label>
       <input id={scope('email')} name="email" />
     </form>
-  )
+  );
 }
 
 /*
