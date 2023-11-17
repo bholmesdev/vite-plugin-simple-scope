@@ -11,6 +11,11 @@
 		"types.d.ts",
 		"index.js"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bholmesdev/vite-plugin-simple-scope.git"
+	},
+	"bugs": "https://github.com/bholmesdev/vite-plugin-simple-scope/issues",
 	"scripts": {
 		"lint": "eslint '**/*.js'",
 		"lint:fix": "eslint --fix '**/*.js'",
@@ -27,5 +32,8 @@
 		"vite": "^4.5.0"
 	},
 	"author": "bholmesdev",
-	"license": "MIT"
+	"license": "MIT",
+	"engines": {
+		"node": ">=18.14.1"
+	}
 }
