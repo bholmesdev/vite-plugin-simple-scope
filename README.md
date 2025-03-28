@@ -1,3 +1,27 @@
 # simple scope 🔎
 
-✈️ This repository has been moved to **the simple stack monorepo.** [Find the README and CONTRIBUTING guide over there!](https://github.com/bholmesdev/simple-stack/tree/main/packages/scope)
+> Get a scoped ID for whatever file you're in. Resolved at build-time with zero client JS.
+
+```jsx
+import { scope } from 'simple:scope';
+
+function Form() {
+  return (
+    <form>
+      <label htmlFor={scope('email')}>Email</label>
+      <input id={scope('email')} name="email" />
+    </form>
+  );
+}
+
+/*
+Output:
+
+<form>
+  <label for="email-dj23i_ka">Email</label>
+  <input id="email-dj23i_ka" name="email">
+</form>
+*/
+```
+
+📚 Visit [the docs](https://simple-stack.dev/scope) for more information and usage examples.
