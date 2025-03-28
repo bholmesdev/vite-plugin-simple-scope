@@ -7,11 +7,13 @@
 		".": "./src/index.ts",
 		"./types": "./ambient.d.ts"
 	},
-	"files": ["src", "ambient.d.ts"],
+	"files": [
+		"src",
+		"ambient.d.ts"
+	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/bholmesdev/simple-stack.git",
-		"directory": "packages/scope"
+		"url": "https://github.com/bholmesdev/vite-plugin-simple-scope.git"
 	},
 	"dependencies": {
 		"typescript": "^5.5.3",
@@ -23,6 +25,7 @@
 		"node": ">=18.14.1"
 	},
 	"devDependencies": {
+		"@types/node": "^22.13.14",
 		"astro": "^4.12.2"
 	}
 }
