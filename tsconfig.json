@@ -1,8 +1,22 @@
 {
-	"extends": "../../tsconfig.base.json",
 	"include": ["src"],
 	"compilerOptions": {
 		"outDir": "./dist",
-		"rootDir": "./src"
+		"rootDir": "./src",
+		"composite": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
+		"preserveWatchOutput": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ESNext",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true
 	}
 }
