@@ -1,4 +1,4 @@
-# simple scope 🔎
+# Simple Scope 🔎
 
 Get a scoped ID for whatever file you're in. Resolved at build-time with zero client JS.
 
@@ -24,4 +24,66 @@ Output:
 */
 ```
 
-📚 Visit [the docs](https://simple-stack.dev/scope) for more information and usage examples.
+## Installation
+
+### As a vite plugin
+
+Simple scope is a vite plugin compatible with any vite-based framework (Astro, Nuxt, SvelteKit, etc). First install the dependency from npm:
+
+```bash
+npm i vite-plugin-simple-scope
+```
+
+Then, apply as a vite plugin in your framework of choice:
+
+```js
+import simpleScope from 'vite-plugin-simple-scope';
+
+// apply `simpleScope()` to your vite plugin config
+```
+
+- [Astro vite plugin configuration](https://docs.astro.build/en/recipes/add-yaml-support/)
+- [Nuxt vite plugin configuration](https://nuxt.com/docs/getting-started/configuration#external-configuration-files)
+- [SvelteKit vite plugin configuration](https://kit.svelte.dev/docs/project-structure#project-files-vite-config-js)
+
+### With the Simple Query Astro integration
+
+Simple Scope is included with the Simple Query Astro integration. You can apply this integration using the `astro add` CLI:
+
+```bash
+astro add simple-stack-query
+```
+
+## Usage
+
+You can import the `scope()` utility from `simple:scope` in any JavaScript-based file. This function accepts an optional prefix string for naming different scoped identifiers.
+
+Since `scope()` uses the file path to generate IDs, multiple calls to `scope()` will append the same value:
+
+```js
+// example.js
+
+scope(); // JYZeLezU
+scope('first'); // first-JYZeLezU
+scope('second'); // second-JYZeLezU
+```
+
+Simple scope will also generate the same ID when called server-side or client-side. This prevents hydration mismatches when using component frameworks like React or Vue, and is helpful when querying scoped element `id`s from the DOM.
+
+This example uses [Astro](https://astro.build) to add a scoped `id` to a `<canvas>` element, and queries that `id` from a client-side `<script>`:
+
+```astro
+---
+// Server-side template
+import { scope } from 'simple:scope';
+---
+
+<canvas id={scope('canvas')}></canvas>
+
+<script>
+// Client-side script
+import { scope } from 'simple:scope';
+
+const canvas = document.getElementById(scope('canvas'));
+</script>
+```
